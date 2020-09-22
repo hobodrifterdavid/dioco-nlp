@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve Flask for NLP data
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/root/nlp_server/python
+Environment="PATH=/root/nlp_server/python/nlp_app_env/bin"
+ExecStart=/root/nlp_server/python/nlp_app_env/bin/gunicorn --workers 6 --bind unix:nlp_app.sock --max-requests 1000 -t 40 -m 007 wsgi:application
+
+[Install]
+WantedBy=multi-user.target

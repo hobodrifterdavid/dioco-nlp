@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# run as root
+# first run: chmod u+x setupNLP
+
+echo update APT packet cache
+apt update -y
+
+echo Add firewall rules and enable
+ufw allow 'Nginx HTTP'
+ufw allow 22
+ufw enable
