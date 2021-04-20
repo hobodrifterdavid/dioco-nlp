@@ -14,7 +14,7 @@ MarkupSafe==1.1.1
 mecab-python3==0.996.2
 more-itertools==7.0.0
 pluggy==0.11.0
-py==1.8.0
+py==1.10.0
 pytest==4.5.0
 requests==2.22.0
 six==1.12.0
